@@ -30,7 +30,6 @@ void convertNumber(char *n1){
 
 void dec_To_Binary(char *n1){
 
-  if (atoi(number) < 0)
     int num = atoi(NUMBER);
 
   for(int index = 32; index > 0;){

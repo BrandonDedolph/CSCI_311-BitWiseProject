@@ -14,6 +14,8 @@
 #define LENGTH 10
 #endif
 
+#define NUM "000"
+
 #ifdef ONE
 #define NUM "0x13579BDF" //first sample number to be defined
 #define DECIMAL false
