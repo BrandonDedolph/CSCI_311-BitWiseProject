@@ -3,4 +3,4 @@ project(CSCI_311_BitWiseProject C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(CSCI_311_BitWiseProject test.c Base.h)
+add_executable(CSCI_311_BitWiseProject rev.c Base.h)

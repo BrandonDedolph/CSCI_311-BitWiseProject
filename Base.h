@@ -6,37 +6,28 @@
 #ifndef BASE_H
 #define BASE_H
 
+#define BINARY 32
+
 #ifdef BIN
-#define BASE 2
 #define LENGTH 32
 #else
-#define BASE 16
-#define LENGTH 10
+#define LENGTH 8
 #endif
 
-#define NUM "000"
-
 #ifdef ONE
-#define NUM "0x13579BDF" //first sample number to be defined
-#define DECIMAL false
-#define NEGATIVE false
+#define NUM 0x13579BDF //first sample number to be defined
 #endif
 
 #ifdef TWO
-#define NUM "-65536"    //second sample number to be defined
-#define DECIMAL true
-#define NEGATIVE true
+#define NUM -65536    //second sample number to be defined
 #endif
 
 #ifdef THREE
-#define NUM "100"       //third sample number to be defined
-#define DECIMAL true
-#define NEGATIVE false
+#define NUM 100       //third sample number to be defined
 #endif
 
-
-#define EXTRACT(NUM, p, n) (NUM >> (p+1-n)) & ~(~0 << n)
-#define INSERT(NUM, NUMBEROFBITS, p) (1 << ((NUMBEROFBITS - 1) - p))
+#define EXTRACT(NUM, p, n) ( (NUM) >> ( (p) +1- (n) )) & ~(~0 << (n) )
+#define INSERT( NUM, NUMBEROFBITS, p) ((NUM)<< (((NUMBEROFBITS) - 1) - (p)))
 
 
 #endif //BASE_H
