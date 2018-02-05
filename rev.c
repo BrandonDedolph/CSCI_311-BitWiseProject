@@ -15,24 +15,23 @@ int main(){
     sprintf(num, "%.8X", NUM);
     printf("Original number:  0x%s\n", num);
 
-    int firstReverse, secondReverse;
-    for (int i = 0, pull = 3, reverseTemp; i < BINARY/4; i++, pull += 4){
+    int firstReverse, secondReverse, reverseTemp = 0;
+    for (int i = 0, pull = 3; i < BINARY/4; i++, pull += 4){
 
         reverseTemp = EXTRACT(NUM, pull, 4);
         firstReverse |= INSERT(reverseTemp, BINARY, pull);
-        printf("%d: %d\n", i, reverseTemp);
     }
 
     printf("Reversed number:  0x%08X\n", firstReverse);
 
-    for (int i = 0, pull = 3, reverseTemp; i < BINARY/4; i++, pull += 4){
+    reverseTemp = 0;
+    for (int i = 0, pull = 3; i < BINARY/4; i++, pull += 4){
 
         reverseTemp = EXTRACT(firstReverse, pull, 4);
         secondReverse |= INSERT(reverseTemp, BINARY, pull);
-        printf("%d: %d\n", i, reverseTemp);
     }
 
-    printf("Second number:   0x%08X\n", secondReverse);
+    printf("Second number:    0x%08X\n", secondReverse);
 
 
 #endif
