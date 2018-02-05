@@ -5,10 +5,10 @@ void printBinary(int);
 
 int main(){
 
-#if defined(BIN)
+#if (BIN)
 
-    int  firstReverse,
-         secondReverse,
+    int  firstReverse = 0,
+         secondReverse = 0,
          reverseTemp = 0;
 
     printf("Original number:  ");
@@ -35,10 +35,9 @@ int main(){
     printBinary(secondReverse);
 
 
-
-
-
 #else
+
+
     char num[LENGTH + 1];
     sprintf(num, "%.8X", NUM);
     printf("Original number:  0x%s\n", num);
@@ -72,11 +71,13 @@ int main(){
 
 void printBinary(int num){
 
-    int temp = 0;
-    for (int pull = 0; pull < BINARY; pull++){
 
-        temp = EXTRACT(num, pull, 1);
-        printf("%d", temp);
+    int tempBinaryNum = 0;
+    for (int pull = BINARY; pull > 0;){
+
+        pull--;
+        tempBinaryNum = EXTRACT(num, pull, 1);
+        printf("%d", tempBinaryNum);
     }
 
     printf("\n");
